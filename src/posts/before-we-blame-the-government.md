@@ -3,7 +3,7 @@ title: "Before We Blame the Government"
 description: "We complain about corruption at the top. But somewhere along the way, we stopped trusting each other at the bottom — and started calling the honest ones foolish."
 excerpt: "In Lagos, you don't just hire a mechanic. You hire a mechanic and then stand over him. Somewhere along the line, we stopped trusting each other — and started laughing at the people who still can be trusted."
 category: "Society"
-date: 2026-11-08T10:00:00Z
+date: 2026-11-08T07:00:00Z
 closingQuestion: "Where in your own life have you started treating a small dishonesty as normal?"
 ---
 

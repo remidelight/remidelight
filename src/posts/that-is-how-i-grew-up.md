@@ -3,7 +3,7 @@ title: "That Is How I Grew Up… and That Is How I Am"
 description: "\"That's how I was raised\" explains where you came from. It doesn't get to decide where you go."
 excerpt: "\"That's how I grew up.\" \"That's how I was trained.\" Your background explains a lot. But if you're a young adult, you've lived maybe a third of your life. The other two-thirds are still unwritten — and they should be written by you."
 category: "Ownership"
-date: 2026-11-09T08:00:00Z
+date: 2026-11-09T07:00:00Z
 closingQuestion: "What is one habit you inherited that you are ready to stop carrying into the next two-thirds of your life?"
 ---
 
