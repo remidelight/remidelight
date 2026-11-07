@@ -52,15 +52,21 @@ layout: base.njk
 </section>
 {% endif %}
 
-{% if site.upcoming.length %}
+{% if scheduled.length or site.upcoming.length %}
 <section class="container section" style="padding-top: 88px" aria-labelledby="upcoming">
   <h2 id="upcoming" style="margin: 0 0 8px; font-size: 1.8rem">Coming up</h2>
-  <p class="muted" style="margin: 0 0 32px">Essays in the works. Titles may change.</p>
+  <p class="muted" style="margin: 0 0 32px">What's next on the blog. Mark your calendar.</p>
   <div class="list">
+    {% for item in scheduled %}
+    <div class="list-item">
+      <h3>{{ item.title }}</h3>
+      <span class="when">Available {{ item.when }}</span>
+    </div>
+    {% endfor %}
     {% for item in site.upcoming %}
     <div class="list-item">
       <h3>{{ item.title }}</h3>
-      <span class="meta">{{ item.tag }} · Coming soon</span>
+      <span class="meta">{{ item.tag }} · Date to be announced</span>
     </div>
     {% endfor %}
   </div>

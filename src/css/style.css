@@ -146,3 +146,6 @@ h1, h2, h3 { font-family: var(--sans); line-height: 1.15; }
   .subscribe { padding: 32px 24px; }
   .nav-links a.pill { margin-left: 0; }
 }
+
+/* Scheduled essay release badge */
+.when { font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--ink); background: #F3E3C4; border-radius: 999px; padding: 4px 12px; }
