@@ -32,7 +32,7 @@
     <a class="brand" href="/"><img class="logo" src="/img/logo-tile.svg" alt="" width="44" height="44"><span>{{ site.title }}</span></a>
     <div class="nav-links">
       <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
-      <a href="/essays/" {% if page.url.startsWith("/essays/") %}aria-current="page"{% endif %}>Essays</a>
+      <a href="/essays/" {% if page.url and page.url.startsWith("/essays/") %}aria-current="page"{% endif %}>Essays</a>
       <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
       <a class="pill" href="/#subscribe">Subscribe</a>
     </div>
