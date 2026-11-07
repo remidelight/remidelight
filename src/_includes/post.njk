@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+<article class="narrow article">
+  {% if category %}<p class="eyebrow">Essay · {{ category }}</p>{% else %}<p class="eyebrow">Essay</p>{% endif %}
+  <h1>{{ title }}</h1>
+  {% if description %}<p class="subtitle">{{ description }}</p>{% endif %}
+  <div class="byline">
+    <span class="mark" aria-hidden="true">{{ site.initials }}</span>
+    <div>
+      <strong>{{ site.author }}</strong>
+      <span class="muted"><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time> · {{ content | readingTime }}</span>
+    </div>
+  </div>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  {% if closingQuestion %}
+  <div class="cta-box">
+    <h2>{{ closingQuestion }}</h2>
+    <p>Think about it. Then subscribe for the next essay.</p>
+    <a class="btn btn-accent" href="/#subscribe">Subscribe</a>
+  </div>
+  {% endif %}
+</article>

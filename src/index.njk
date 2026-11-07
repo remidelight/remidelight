@@ -1,0 +1,70 @@
+---
+layout: base.njk
+---
+{% set featured = collections.posts[0] %}
+<section class="container hero">
+  <p class="eyebrow">Growth · Learning · Living fully</p>
+  <h1 class="display">You are capable of more than your comfort zone will admit.</h1>
+  <p class="lede">{{ site.title }} is a blog about realizing your potential and living a fuller, more fulfilling life — through honest reflection, continuous learning and the humility to know there is always more to know.</p>
+  <div class="btn-row">
+    {% if featured %}<a class="btn btn-accent" href="{{ featured.url }}">Read the latest essay</a>{% endif %}
+    <a class="btn btn-outline" href="/about/">Why this blog exists</a>
+  </div>
+</section>
+
+<section class="container section" aria-labelledby="pillars">
+  <h2 id="pillars" class="section-title">What you'll find here</h2>
+  <div class="cards">
+    <div class="card"><p class="num">01</p><h3>Realize your potential</h3><p>Seeing the ceilings we build over our own lives — and why so many of us never notice them.</p></div>
+    <div class="card"><p class="num">02</p><h3>Learn, and stay humble</h3><p>A continuous loop: every new thing you know shows you how much you still don't.</p></div>
+    <div class="card"><p class="num">03</p><h3>Live for more</h3><p>Not more for the sake of status — a fuller, more fulfilling life, chosen on purpose.</p></div>
+  </div>
+</section>
+
+{% if featured %}
+<section class="band" aria-labelledby="featured">
+  <div class="container featured">
+    <div class="text">
+      <p class="eyebrow">Featured essay</p>
+      <h2 id="featured">{{ featured.data.title }}</h2>
+      <p>{{ featured.data.excerpt or featured.data.description }}</p>
+      <a class="btn btn-light" href="{{ featured.url }}">Read the essay</a>
+    </div>
+    <figure class="quote-card">
+      <blockquote>“Now that you know, still know that you don't know it all.”</blockquote>
+      <figcaption>— {{ site.author }}</figcaption>
+    </figure>
+  </div>
+</section>
+{% endif %}
+
+{% if collections.posts.length > 1 %}
+<section class="container section" style="padding-top: 88px" aria-labelledby="recent">
+  <h2 id="recent" style="margin: 0 0 32px; font-size: 1.8rem">Recent essays</h2>
+  <div class="list">
+    {% for post in collections.posts | batch(6) | first %}
+    <div class="list-item">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <span class="meta">{{ post.date | readableDate }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if site.upcoming.length %}
+<section class="container section" style="padding-top: 88px" aria-labelledby="upcoming">
+  <h2 id="upcoming" style="margin: 0 0 8px; font-size: 1.8rem">Coming up</h2>
+  <p class="muted" style="margin: 0 0 32px">Essays in the works. Titles may change.</p>
+  <div class="list">
+    {% for item in site.upcoming %}
+    <div class="list-item">
+      <h3>{{ item.title }}</h3>
+      <span class="meta">{{ item.tag }} · Coming soon</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% include "subscribe.njk" %}

@@ -1,0 +1,22 @@
+<section id="subscribe" class="container section" aria-labelledby="subscribe-title">
+  <div class="subscribe">
+    <div class="text">
+      <h2 id="subscribe-title">Keep the loop going</h2>
+      <p>Get each new essay by email. One honest idea at a time, no noise.</p>
+    </div>
+    {% if site.buttondownUsername %}
+    <form action="https://buttondown.com/api/emails/embed-subscribe/{{ site.buttondownUsername }}" method="post" target="_blank">
+      <label for="bd-email">Email address</label>
+      <div class="field-row">
+        <input id="bd-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        <button type="submit">Subscribe</button>
+      </div>
+      <p class="note">Unsubscribe anytime.</p>
+    </form>
+    {% else %}
+    <div style="flex: 1 1 340px">
+      <p class="note">Email sign-ups are coming soon. In the meantime, write to <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

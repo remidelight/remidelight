@@ -1,0 +1,14 @@
+{
+  "name": "remidelight",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Remi DeLight — Transformative Success Synergies blog",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Essays
+permalink: /essays/
+---
+<section class="narrow article">
+  <p class="eyebrow">All essays</p>
+  <h1>Essays</h1>
+  <p class="subtitle">Honest reflections on potential, learning and living fully.</p>
+  <div class="list">
+    {% for post in collections.posts %}
+    <div class="list-item">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <span class="meta">{{ post.date | readableDate }}</span>
+      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% include "subscribe.njk" %}
