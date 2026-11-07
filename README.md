@@ -32,6 +32,7 @@ More writing. Use *italics* and **bold** like this.
 5. Click **Commit changes**. Netlify rebuilds the site and the essay is live in about a minute.
 
 The newest essay (by `date`) automatically becomes the featured essay on the home page.
+Each essay also gets its own link-preview image automatically (shown when the link is shared on WhatsApp, Facebook, LinkedIn, X, etc.).
 
 ## Changing other things
 

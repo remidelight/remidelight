@@ -1,12 +1,24 @@
+import fs from "node:fs";
+import { buildOgImages } from "./og-images.js";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // All essays live in src/posts, newest first
-  eleventyConfig.addCollection("posts", (api) =>
-    api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
-  );
+  let postsForImages = [];
+  eleventyConfig.addCollection("posts", (api) => {
+    const posts = api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date);
+    postsForImages = posts.map((p) => ({ slug: p.fileSlug, title: p.data.title, category: p.data.category }));
+    return posts;
+  });
+
+  // After each build, draw a share image (link preview) for every essay
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const site = JSON.parse(fs.readFileSync("src/_data/site.json", "utf-8"));
+    await buildOgImages({ outputDir: dir.output, posts: postsForImages, site });
+  });
 
   eleventyConfig.addFilter("readableDate", (date) =>
     new Date(date).toLocaleDateString("en-US", {

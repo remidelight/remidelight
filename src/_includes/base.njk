@@ -12,7 +12,13 @@
 <meta property="og:description" content="{{ description or site.description }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta name="twitter:card" content="summary">
+{% if layout == 'post.njk' %}{% set ogImage = "/og/" + page.fileSlug + ".png" %}{% else %}{% set ogImage = "/og/default.png" %}{% endif %}
+<meta property="og:image" content="{{ site.url }}{{ ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ title or site.title }} — {{ site.author }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
