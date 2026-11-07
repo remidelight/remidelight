@@ -10,7 +10,7 @@ const COLORS = { ink: "#17302A", ground: "#F6F5F0", accent: "#E8A33D", soft: "#B
 
 const h = (type, style, children) => ({ type, props: { style, children } });
 
-function card({ eyebrow, title, author, domain, initials }) {
+function card({ eyebrow, title, author, domain, logo }) {
   const size = title.length > 70 ? 54 : title.length > 45 ? 62 : 72;
   return h(
     "div",
@@ -26,10 +26,7 @@ function card({ eyebrow, title, author, domain, initials }) {
       h("div", { display: "flex", fontSize: `${size}px`, fontWeight: 700, lineHeight: 1.12, letterSpacing: "-1px", maxWidth: "1000px" }, title),
       h("div", { display: "flex", alignItems: "center", justifyContent: "space-between" }, [
         h("div", { display: "flex", alignItems: "center", gap: "18px" }, [
-          h("div", {
-            width: "64px", height: "64px", borderRadius: "32px", backgroundColor: COLORS.ground, color: COLORS.ink,
-            display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px", fontWeight: 700,
-          }, initials),
+          { type: "img", props: { src: logo, width: 72, height: 72, style: { borderRadius: "14px" } } },
           h("div", { fontSize: "30px", fontWeight: 600 }, author),
         ]),
         h("div", { fontSize: "26px", color: COLORS.soft, fontFamily: "Source Serif" }, domain),
@@ -45,6 +42,9 @@ export async function buildOgImages({ outputDir, posts, site }) {
     { name: "Source Serif", data: await font("@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff"), weight: 400, style: "normal" },
   ];
   const domain = site.url.replace(/^https?:\/\//, "");
+  const tile = await fs.readFile("src/img/logo-tile.svg", "utf-8");
+  const logoPng = new Resvg(tile, { fitTo: { mode: "width", value: 144 } }).render().asPng();
+  const logo = "data:image/png;base64," + Buffer.from(logoPng).toString("base64");
   const dir = path.join(outputDir, "og");
   await fs.mkdir(dir, { recursive: true });
 
@@ -55,7 +55,7 @@ export async function buildOgImages({ outputDir, posts, site }) {
 
   for (const job of jobs) {
     const svg = await satori(
-      card({ eyebrow: job.eyebrow, title: job.title, author: site.author, domain, initials: site.initials }),
+      card({ eyebrow: job.eyebrow, title: job.title, author: site.author, domain, logo }),
       { width: 1200, height: 630, fonts }
     );
     const png = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
