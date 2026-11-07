@@ -1,21 +1,23 @@
 ---
 title: "The Comfortable Ceiling: Why People Settle for Less"
 description: "Contentment is not the problem. Settling without ever knowing there was a choice — that is the problem."
-excerpt: "I watched an old primary school teacher dance to a drum after a plate of amala, and it stayed with me. Not because his joy was wrong — but because I wondered whether he ever knew what else was possible."
+excerpt: "I watched a primary school teacher in Igboora, a man in his late fifties, dance to a drum after a plate of amala, and it stayed with me. Not because his joy was wrong — but because it made me ask whether I am living at the level I am capable of."
 category: "Realize your potential"
 date: 2026-11-07
 closingQuestion: "What is one area of your life where you've settled without deciding to?"
 ---
 
-I recently watched a short video of a primary school teacher in Nigeria. He had just finished a plate of amala, and someone was beating a drum, and he was dancing. Fully. Joyfully. An old man, completely at home in the moment.
+I recently watched a short video of a primary school teacher in Igboora, a man in his late fifties. He had just finished a plate of amala, someone was beating a drum, and he was dancing. Fully. Joyfully. Completely at home in the moment.
 
-Part of me smiled. Another part of me felt something heavier. I kept thinking: *this man could have gone further.* Not because teaching is small — teaching is one of the most important jobs there is — but because I could sense a mind that was capable of more than the life around it ever asked of him. And he seemed not to know it.
+Part of me smiled. Another part of me felt something heavier. From what I could see, here was a man capable of far more than where life had placed him. Not because teaching is small — teaching is one of the most important jobs there is — but because I sensed a mind that the life around him had never fully stretched.
 
-That feeling has followed me since. Everywhere I look I see people living well below what they can do, and the hardest part is that most of them don't realize it.
+I don't know his whole story. Maybe that moment is everything he ever wanted. But watching him, a question came to me that had less to do with him and more to do with me: *Am I living at the level I'm capable of, or have I just gotten comfortable where I am?*
+
+That question has followed me since. Everywhere I look I see people living well below what they can do — and the hardest part is that most of them don't realize it. Sometimes, I suspect, that includes me.
 
 ## First, a fair objection
 
-Maybe he is happy. Maybe that dance *is* his peak, and who am I to say otherwise? I take that seriously. Joy is not a failure, and peace is not something to be pitied. Plenty of people chase "more" their whole lives and never once dance like that.
+Maybe that dance *is* his peak, and who am I to say otherwise? I take that possibility seriously. Joy is not a failure, and peace is not something to be pitied. Plenty of people chase "more" their whole lives and never once dance like that.
 
 So let me be precise about what bothers me. It isn't that people are content. It's that many people are content by default — not because they looked at the options and chose this, but because they never saw that there were options. A choice you didn't know you had is not really a choice.
 
