@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Remi DeLight — Transformative Success Synergies blog",
+  "description": "Remi DeLight — essays on potential, learning and living fully",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"

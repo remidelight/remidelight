@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if title %}{{ title }} — {% endif %}{{ site.title }}</title>
+<title>{% if title %}{{ title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
 <meta name="description" content="{{ description or site.description }}">
 <meta name="author" content="{{ site.author }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
@@ -23,7 +23,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="container nav" aria-label="Main">
-    <a class="brand" href="/"><span class="mark" aria-hidden="true">TSS</span><span>{{ site.title }}</span></a>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true">{{ site.initials }}</span><span>{{ site.title }}</span></a>
     <div class="nav-links">
       <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
       <a href="/essays/" {% if page.url.startsWith("/essays/") %}aria-current="page"{% endif %}>Essays</a>
@@ -38,7 +38,7 @@
 <footer class="site-footer">
   <div class="container">
     <span>© {{ year }} {{ site.title }}</span>
-    <span>Written by {{ site.author }} · <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a></span>
+    <span>{{ site.tagline }} · <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a></span>
   </div>
 </footer>
 </body>

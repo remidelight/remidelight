@@ -1,6 +1,6 @@
 # remidelight.com
 
-The website for **Transformative Success Synergies**, written by Remi DeLight.
+The website for **Remi DeLight** — essays on realizing your potential and living for more.
 
 ## How to publish a new essay
 

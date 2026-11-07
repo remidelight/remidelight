@@ -1,15 +1,28 @@
 {
-  "title": "Transformative Success Synergies",
+  "title": "Remi DeLight",
   "author": "Remi DeLight",
   "initials": "RD",
   "url": "https://remidelight.com",
-  "description": "A blog about realizing your potential and living a fuller, more fulfilling life — through honest reflection, continuous learning and humility.",
+  "description": "Essays on realizing your potential and living a fuller, more fulfilling life — through honest reflection, continuous learning and humility.",
   "contactEmail": "hello@remidelight.com",
   "buttondownUsername": "",
   "upcoming": [
-    { "title": "Exposure: you cannot strive for what you have never seen", "tag": "Potential" },
-    { "title": "Comfort is not the enemy — unexamined comfort is", "tag": "Living fully" },
-    { "title": "The day I realized how much I didn't know", "tag": "Learning" },
-    { "title": "Building a learning loop that survives a busy life", "tag": "Learning" }
-  ]
+    {
+      "title": "Exposure: you cannot strive for what you have never seen",
+      "tag": "Potential"
+    },
+    {
+      "title": "Comfort is not the enemy — unexamined comfort is",
+      "tag": "Living fully"
+    },
+    {
+      "title": "The day I realized how much I didn't know",
+      "tag": "Learning"
+    },
+    {
+      "title": "Building a learning loop that survives a busy life",
+      "tag": "Learning"
+    }
+  ],
+  "tagline": "Realize your potential. Live for more."
 }
