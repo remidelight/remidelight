@@ -47,5 +47,30 @@
     <span>{{ site.tagline }} · <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a></span>
   </div>
 </footer>
+<script>
+(function () {
+  var header = document.querySelector(".site-header");
+  if (!header) return;
+  var lastY = window.scrollY, ticking = false;
+  var THRESHOLD = 8;           // ignore tiny scroll jitters (px)
+  function update() {
+    var y = window.scrollY;
+    var past = y > header.offsetHeight + 40;
+    if (header.contains(document.activeElement)) {
+      header.classList.remove("is-hidden");
+    } else if (y - lastY > THRESHOLD && past) {
+      header.classList.add("is-hidden");      // scrolling down
+    } else if (lastY - y > THRESHOLD || !past) {
+      header.classList.remove("is-hidden");   // scrolling up, or near the top
+    }
+    if (Math.abs(y - lastY) > THRESHOLD) lastY = y;
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  header.addEventListener("focusin", function () { header.classList.remove("is-hidden"); });
+})();
+</script>
 </body>
 </html>

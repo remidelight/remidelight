@@ -35,7 +35,7 @@ a:hover { color: var(--ink); }
 .skip:focus { left: 16px; top: 16px; background: var(--card); padding: 8px 14px; z-index: 10; }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 50; background: #1F3034; border-bottom: 1px solid #2E4448; box-shadow: 0 2px 14px rgba(0,0,0,0.12); }
+.site-header { position: sticky; top: 0; z-index: 50; transition: transform 0.35s ease; background: #1F3034; border-bottom: 1px solid #2E4448; box-shadow: 0 2px 14px rgba(0,0,0,0.12); }
 .site-header .brand { color: #EFEAE2; gap: 14px; }
 .brand-name { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 2.7rem; letter-spacing: 0.01em; line-height: 1; }
 .site-header .logo { width: 64px; height: 64px; border-radius: 14px; }
@@ -164,3 +164,7 @@ h1, h2, h3 { font-family: var(--sans); line-height: 1.15; }
 
 /* Scheduled essay release badge */
 .when { font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--ink); background: #F3E3C4; border-radius: 999px; padding: 4px 12px; }
+
+/* Header hides while scrolling down, returns when scrolling up */
+.site-header.is-hidden { transform: translateY(-110%); }
+@media (prefers-reduced-motion: reduce) { .site-header { transition: none; } }
