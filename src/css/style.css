@@ -39,7 +39,6 @@ a:hover { color: var(--ink); }
 .site-header .brand { color: #EFEAE2; gap: 14px; }
 .brand-name { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 2.7rem; letter-spacing: 0.01em; line-height: 1; }
 .site-header .logo { width: 64px; height: 64px; border-radius: 14px; }
-.brand-tag { align-self: center; margin-left: 2px; padding: 4px 0 4px 14px; border-left: 1px solid rgba(190,163,111,0.6); font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: #BEA36F; }
 .site-header .nav-links a { color: #E3DED5; }
 .site-header .nav-links a:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
 .site-header .nav-links a[aria-current="page"] { color: #FFFFFF; box-shadow: inset 0 -2px 0 #BEA36F; border-radius: 0; }
@@ -155,7 +154,8 @@ h1, h2, h3 { font-family: var(--sans); line-height: 1.15; }
   .nav { padding-block: 10px; gap: 8px; }
   .brand-name { font-size: 2rem; }
   .site-header .logo { width: 50px; height: 50px; }
-  .brand-tag { font-size: 0.6rem; letter-spacing: 0.24em; padding-left: 10px; }
+  .brand-tag { font-size: 1.35rem; }
+  .brand-star { width: 9px; height: 9px; }
   .nav-links { font-size: 0.88rem; }
   .nav-links a { padding: 8px 9px; }
   .logo { width: 38px; height: 38px; }
@@ -175,3 +175,8 @@ h1, h2, h3 { font-family: var(--sans); line-height: 1.15; }
 .comments { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
 .comments h2 { margin: 0 0 6px; font-size: 1.6rem; }
 .comments > p { margin: 0 0 24px; font-size: 1rem; }
+
+/* Stylish "blog" tag beside the site name */
+.brand-tag { position: relative; display: inline-flex; align-items: flex-start; margin-left: -4px; transform: translateY(10px) rotate(-6deg); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.7rem; line-height: 1; letter-spacing: 0.02em; color: #CDB383; }
+.brand-tag span { background: linear-gradient(90deg, #E2CC9C, #BEA36F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand-star { width: 11px; height: 11px; margin-right: 3px; margin-top: -2px; color: #E2CC9C; }
