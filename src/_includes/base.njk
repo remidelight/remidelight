@@ -29,7 +29,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="container nav" aria-label="Main">
-    <a class="brand" href="/"><img class="logo" src="/img/logo-tile.svg" alt="" width="44" height="44"><span class="brand-name">{{ site.title }}</span></a>
+    <a class="brand" href="/"><img class="logo" src="/img/logo-tile.svg" alt="" width="44" height="44"><span class="brand-name">{{ site.title }}</span><span class="brand-tag">Blog</span></a>
     <div class="nav-links">
       <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
       <a href="/essays/" {% if page.url and page.url.startsWith("/essays/") %}aria-current="page"{% endif %}>Essays</a>
