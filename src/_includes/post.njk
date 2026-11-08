@@ -22,4 +22,20 @@ layout: base.njk
     <a class="btn btn-accent" href="/#subscribe">Subscribe</a>
   </div>
   {% endif %}
+  {% if site.fastcommentsTenantId %}
+  <section class="comments" aria-labelledby="comments-title">
+    <h2 id="comments-title">Join the conversation</h2>
+    <p class="muted">Share your thoughts on this essay. Comments are moderated.</p>
+    <div id="fastcomments-widget"></div>
+  </section>
+  <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+  <script>
+    FastCommentsUI(document.getElementById("fastcomments-widget"), {
+      tenantId: "{{ site.fastcommentsTenantId }}",
+      urlId: "{{ page.url }}",
+      url: "{{ site.url }}{{ page.url }}",
+      pageTitle: {{ title | dump | safe }}
+    });
+  </script>
+  {% endif %}
 </article>

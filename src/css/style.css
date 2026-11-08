@@ -168,3 +168,8 @@ h1, h2, h3 { font-family: var(--sans); line-height: 1.15; }
 /* Header hides while scrolling down, returns when scrolling up */
 .site-header.is-hidden { transform: translateY(-110%); }
 @media (prefers-reduced-motion: reduce) { .site-header { transition: none; } }
+
+/* Comments */
+.comments { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+.comments h2 { margin: 0 0 6px; font-size: 1.6rem; }
+.comments > p { margin: 0 0 24px; font-size: 1rem; }
