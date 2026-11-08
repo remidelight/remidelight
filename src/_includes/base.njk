@@ -51,25 +51,28 @@
 (function () {
   var header = document.querySelector(".site-header");
   if (!header) return;
-  var lastY = window.scrollY, ticking = false;
-  var THRESHOLD = 8;           // ignore tiny scroll jitters (px)
+  var lastY = window.scrollY, ticking = false, showTimer = null;
+  var THRESHOLD = 8;       // ignore tiny scroll jitters (px)
+  var SHOW_DELAY = 400;    // wait this long (ms) after scrolling up before the header returns
+  function hide() { clearTimeout(showTimer); showTimer = null; header.classList.add("is-hidden"); }
+  function show(now) {
+    if (now) { clearTimeout(showTimer); showTimer = null; header.classList.remove("is-hidden"); return; }
+    if (showTimer || !header.classList.contains("is-hidden")) return;
+    showTimer = setTimeout(function () { showTimer = null; header.classList.remove("is-hidden"); }, SHOW_DELAY);
+  }
   function update() {
     var y = window.scrollY;
     var past = y > header.offsetHeight + 40;
-    if (header.contains(document.activeElement)) {
-      header.classList.remove("is-hidden");
-    } else if (y - lastY > THRESHOLD && past) {
-      header.classList.add("is-hidden");      // scrolling down
-    } else if (lastY - y > THRESHOLD || !past) {
-      header.classList.remove("is-hidden");   // scrolling up, or near the top
-    }
+    if (!past) show(true);                       // near the top: always visible
+    else if (y - lastY > THRESHOLD) hide();      // scrolling down
+    else if (lastY - y > THRESHOLD) show(false); // scrolling up: return after a short pause
     if (Math.abs(y - lastY) > THRESHOLD) lastY = y;
     ticking = false;
   }
   window.addEventListener("scroll", function () {
     if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
-  header.addEventListener("focusin", function () { header.classList.remove("is-hidden"); });
+  header.addEventListener("focusin", function () { show(true); });
 })();
 </script>
 </body>
